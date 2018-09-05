@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 /**
- * Created by Jant on 2017/3/20.
+ * Created by Allen on 2018/9/5.
  */
 
 public class CoordinatorBehavior extends CoordinatorLayout.Behavior<Button> {
@@ -22,7 +22,6 @@ public class CoordinatorBehavior extends CoordinatorLayout.Behavior<Button> {
     }
 
 
-
     @Override
     public boolean layoutDependsOn(CoordinatorLayout parent, Button child, View dependency) {
         return dependency instanceof MoveView;
@@ -31,9 +30,7 @@ public class CoordinatorBehavior extends CoordinatorLayout.Behavior<Button> {
 
     @Override
     public boolean onDependentViewChanged(CoordinatorLayout parent, Button child, View dependency) {
-
         //根据dependency的位置，设置Button的位置
-
         int top = dependency.getTop();
         int left = dependency.getLeft();
 
@@ -42,8 +39,6 @@ public class CoordinatorBehavior extends CoordinatorLayout.Behavior<Button> {
 
         setPosition(child, x, y);
         return true;
-
-
     }
 
 

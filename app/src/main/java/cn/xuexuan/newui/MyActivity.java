@@ -14,7 +14,7 @@ import android.view.View;
 import android.widget.Button;
 
 /**
- * Created by Jant on 2017/3/17.
+ * Created by Allen on 2018/9/5.
  */
 
 public class MyActivity extends Activity {

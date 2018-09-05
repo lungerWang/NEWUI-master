@@ -8,21 +8,19 @@ import android.view.View;
 
 
 /**
- * Created by Jant on 2017/3/20.
+ * Created by Allen on 2018/9/5.
  */
-
 public class MoveView extends View {
-
 
     private int lastX;
     private int lastY;
+
     public MoveView(Context context, AttributeSet attrs) {
-        super(context,attrs);
+        super(context, attrs);
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-
         int x = (int) event.getRawX();
         int y = (int) event.getRawY();
 
@@ -37,7 +35,6 @@ public class MoveView extends View {
                 CoordinatorLayout.MarginLayoutParams layoutParams = (CoordinatorLayout.MarginLayoutParams) getLayoutParams();
                 int left = layoutParams.leftMargin + x - lastX;
                 int top = layoutParams.topMargin + y - lastY;
-
 
                 layoutParams.leftMargin = left;
                 layoutParams.topMargin = top;
