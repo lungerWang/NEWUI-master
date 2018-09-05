@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <View
+        android:id="@+id/span"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y20"
+        android:background="#efeff4"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y188">
+
+        <ImageView
+            android:id="@+id/iv_pic"
+            android:layout_width="@dimen/x222"
+            android:layout_height="@dimen/y128"
+            android:scaleType="centerCrop"
+            android:background="#6700ff00"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x30"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y128"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/x20"
+            android:layout_marginRight="@dimen/x30"
+            android:layout_toRightOf="@id/iv_pic">
+
+            <TextView
+                android:id="@+id/tv_tittle"
+                android:lineSpacingExtra="@dimen/y14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="这是标题哈哈你好ek12345787亲子王国89456123123564789798hahaha"
+                android:textColor="#303030"
+                android:textSize="@dimen/x30"/>
+
+            <TextView
+                android:id="@+id/tv_category"
+                android:layout_width="@dimen/x150"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="亲子生活"
+                android:textColor="#9d9d9d"
+                android:textSize="@dimen/x24"/>
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@id/tv_category"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="2018.08.16"
+                android:textColor="#9d9d9d"
+                android:textSize="@dimen/x24"/>
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

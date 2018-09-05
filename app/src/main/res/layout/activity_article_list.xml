@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="cn.xuexuan.newui.ArticleListActivity">
+
+    <RelativeLayout
+        android:id="@+id/top_relative"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y150"
+        android:background="#88000000"
+        android:gravity="center_vertical" />
+
+    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                     xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                     android:layout_width="match_parent"
+                                                     android:layout_height="match_parent">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/inc_style"
+                app:layout_scrollFlags="scroll|enterAlways"
+                >
+                
+                <RelativeLayout
+                    android:id="@+id/rl_avatar"
+                    android:layout_width="@dimen/x120"
+                    android:layout_height="@dimen/x120"
+                    android:layout_marginBottom="@dimen/y40"
+                    android:layout_marginLeft="@dimen/x30"
+                    android:layout_marginTop="@dimen/y40">
+
+                    <ImageView
+                        android:id="@+id/iv_avatar"
+                        android:layout_width="@dimen/x114"
+                        android:layout_height="@dimen/x114"
+                        android:src="@mipmap/ic_launcher"
+                        android:layout_centerInParent="true"
+                        android:scaleType="centerCrop"
+                        />
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/y40"
+                    android:layout_marginLeft="@dimen/x20"
+                    android:layout_marginTop="@dimen/y50"
+                    android:layout_toRightOf="@id/rl_avatar"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txt_user_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="BK乐园"
+                        android:textColor="#ffffff"
+                        android:textSize="@dimen/x34"/>
+
+                    <TextView
+                        android:id="@+id/txt_introduce"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/y5"
+                        android:ellipsize="end"
+                        android:text="这是BK乐园的简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介"
+                        android:textColor="@color/color_d8ffe8"
+                        android:textSize="@dimen/x22"/>
+                </LinearLayout>
+
+
+            </RelativeLayout>
+        </android.support.design.widget.AppBarLayout>
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+        </FrameLayout>
+    </android.support.design.widget.CoordinatorLayout>
+
+</LinearLayout>

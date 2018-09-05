@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- **************************App主体色************************************** -->
+
+    <!-- 背景银灰色 -->
+    <color name="inc_bg_tra">#F5F5F5</color>
+    <color name="app_bg">#EFEFF4</color>
+    <!-- 主题颜色 天蓝色 -->
+    <!--<color name="inc_style">#7EDDE0</color>-->
+    <color name="inc_style">#35BD6C</color>
+    <!-- 主题颜色 浅蓝色 -->
+    <color name="inc_style_shallow">#66DE97</color>
+    <color name="inc_style_shallow1">#E1F2E2</color>
+    <!--<color name="inc_style_shallow">#AFEFF2</color>-->
+    <!--<color name="inc_style_shallow1">#D8F4F6</color>-->
+    <!-- 主题颜色 深蓝色 -->
+    <!--<color name="inc_style_deep">#33A2A7</color>-->
+    <color name="inc_style_deep">#117B3C</color>
+
+    <!-- **************************共有色**************************************** -->
+    <!-- 黑色分级  常用黑5为主体黑、数字越大颜色越深-->
+    <color name="inc_black_color_1">#919191</color>
+    <color name="inc_black_color_2">#818181</color>
+    <color name="inc_black_color_3">#717171</color>
+    <color name="inc_black_color_4">#616161</color>
+    <color name="inc_black_color_5">#515151</color>
+    <color name="inc_black_color_6">#414141</color>
+    <color name="inc_black_color_7">#313131</color>
+    <color name="inc_black_color_8">#212121</color>
+    <color name="inc_black_color_9">#191919</color>
+
+
+    <!-- 灰色分级  常用3为主体灰；数字越大颜色越深 ,越往下可以使用黑色分级-->
+    <color name="inc_gray_color_1">#F1F1F1</color>
+    <color name="inc_gray_color_2">#E1E1E1</color>
+    <color name="inc_gray_color_3">#D1D1D1</color>
+    <color name="inc_gray_color_4">#C1C1C1</color>
+    <color name="inc_gray_color_5">#B1B1B1</color>
+    <color name="inc_gray_color_6">#A1A1A1</color>
+    <color name="inc_gray_color_7">#f1f1f1</color>
+    <color name="color_cbcbcb">#CBCBCB</color> <!--搜索寬綫顔色-->
+    <!-- 主题白 -->
+    <color name="inc_white">#FFFFFF</color>
+
+    <!-- ***************************自定义色************************************* -->
+    <!-- 链接色 -->
+    <color name="link_color">#0000FF</color>
+
+    <!-- 此颜色和背景银灰色一致 -->
+    <drawable name="more_relative_selected">#F5F5F5</drawable>
+    <drawable name="more_relative_blue_normal">@color/inc_style_shallow1</drawable>
+    <drawable name="more_relative_normal">#ffffff</drawable>
+    <drawable name="drawable_style_deep">@color/inc_style_deep</drawable>
+    <drawable name="drawable_white">@color/inc_white</drawable>
+
+    <color name="vip_thread_view_bg">#f0c9ca</color>
+
+    <!-- 置顶帖子与非置顶帖子分割线 -->
+    <color name="threads_line">#EFEFF4</color>
+
+    <!-- 投票选择的颜色 -->
+    <color name="inc_tv_color_14">#a4dda7</color>
+    <color name="inc_tv_color_15">#e1f2e2</color>
+
+    <color name="inc_transparent">#33333333</color>
+    <color name="inc_transparent_a">#44111111</color>
+    <!-- **************************************************************** -->
+    <color name="inc_tv_color_1">#C1C1C1</color>
+    <color name="text_course">#ff9940</color>
+    <color name="color_c5aa90">#c5aa90</color>
+    <color name="color_b18e6d">#b18e6d</color>
+    <color name="color_356e6b">#356e6b</color>
+    <color name="divider_dark">#e4e4e4</color><!--灰色分割线-->
+    <color name="color_333333">#333333</color>
+    <color name="color_e4e4e9">#e4e4e9</color>
+    <color name="color_757575">#757575</color>
+    <color name="color_a6a6a6">#a6a6a6</color>
+    <color name="color_898989">#898989</color>
+    <color name="color_8d8d8e">#8d8d8e</color>
+    <color name="color_999999">#999999</color>
+    <color name="color_e2e2e2">#e2e2e2</color>
+    <color name="color_346e6b">#346e6b</color>
+    <color name="color_9d9d9d">#9d9d9d</color>
+    <color name="color_cccccc">#cccccc</color>
+    <color name="color_b0b0b0">#b0b0b0</color>
+    <color name="color_303030">#303030</color>
+    <color name="color_d8ffe8">#d8ffe8</color>
+    <color name="color_f9f9f9">#f9f9f9</color>
+
+    <!--列表默認 選擇顔色 -->
+    <color name="dark_list_bg">#f4f4f4</color><!--列表背景灰色-->
+    <drawable name="drawable_list_gray_normal">@color/dark_list_bg</drawable>
+    <drawable name="drawable_list_select">#CCCCCC</drawable>
+</resources>
