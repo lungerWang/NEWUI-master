@@ -8,22 +8,27 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".MyActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
 
-        </activity>
-        <activity android:name=".CoordinatorActivity">
-        </activity>
-        <activity android:name=".ArticleListActivity"
-                  android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".CoorLayoutActivity1"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity android:name=".CoordinatorActivity"/>
+
+        <activity
+            android:name=".CoorLayoutActivity2"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+
     </application>
 
 </manifest>

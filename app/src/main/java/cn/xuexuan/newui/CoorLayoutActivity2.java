@@ -24,7 +24,7 @@ import io.reactivex.annotations.NonNull;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
-public class ArticleListActivity extends Activity implements BaseQuickAdapter.RequestLoadMoreListener {
+public class CoorLayoutActivity2 extends Activity implements BaseQuickAdapter.RequestLoadMoreListener {
 
     private RecyclerView rlv;
     private AppBarLayout mAppBarLayout;

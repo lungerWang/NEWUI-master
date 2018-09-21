@@ -8,7 +8,6 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
@@ -17,7 +16,7 @@ import android.widget.Button;
  * Created by Allen on 2018/9/5.
  */
 
-public class MyActivity extends Activity {
+public class CoorLayoutActivity1 extends Activity {
 
 
     @Override
@@ -43,7 +42,7 @@ public class MyActivity extends Activity {
         lButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent lIntent = new Intent(MyActivity.this,CoordinatorActivity.class);
+                Intent lIntent = new Intent(CoorLayoutActivity1.this,CoordinatorActivity.class);
                 startActivity(lIntent);
             }
         });
