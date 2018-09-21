@@ -8,6 +8,7 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 import android.widget.LinearLayout;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -29,6 +30,8 @@ public class CoorLayoutActivity3 extends Activity implements BaseQuickAdapter.Re
 
     private ArticleListAdapter mArticleListAdapter;
     private List<String> mList;
+    private LinearLayout ll_main_category;
+    private LinearLayout ll_sub_category;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +42,13 @@ public class CoorLayoutActivity3 extends Activity implements BaseQuickAdapter.Re
         initRecycle();
     }
 
+    private void findView() {
+        rlv = (RecyclerView) findViewById(R.id.recyclerView);
+        mAppBarLayout = (AppBarLayout) findViewById(R.id.app_bar_layout);
+        ll_main_category = (LinearLayout) findViewById(R.id.ll_main_category);
+        ll_sub_category = (LinearLayout) findViewById(R.id.ll_sub_category);
+
+    }
 
     private void initRecycle() {
         mList = new ArrayList<>();
@@ -54,10 +64,6 @@ public class CoorLayoutActivity3 extends Activity implements BaseQuickAdapter.Re
         mArticleListAdapter.setOnLoadMoreListener(this, rlv);
     }
 
-    private void findView() {
-        rlv = (RecyclerView) findViewById(R.id.recyclerView);
-        mAppBarLayout = (AppBarLayout) findViewById(R.id.app_bar_layout);
-    }
 
     @Override
     public void onLoadMoreRequested() {
@@ -74,5 +80,25 @@ public class CoorLayoutActivity3 extends Activity implements BaseQuickAdapter.Re
                         mArticleListAdapter.notifyDataSetChanged();
                     }
                 });
+    }
+
+    /**
+     * 只有主栏目
+     * @param view
+     */
+    public void onlyMainCate(View view) {
+        ll_sub_category.setVisibility(View.GONE);
+        AppBarLayout.LayoutParams mParams = (AppBarLayout.LayoutParams) mAppBarLayout.getChildAt(0).getLayoutParams();
+        mParams.setScrollFlags(0);
+    }
+
+    /**
+     * 有子栏目
+     * @param view
+     */
+    public void haveSub(View view) {
+        ll_sub_category.setVisibility(View.VISIBLE);
+        AppBarLayout.LayoutParams mParams = (AppBarLayout.LayoutParams) mAppBarLayout.getChildAt(0).getLayoutParams();
+        mParams.setScrollFlags(AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS | AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL);
     }
 }

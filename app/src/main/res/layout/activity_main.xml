@@ -9,7 +9,6 @@
     tools:context=".MainActivity">
 
     <Button
-        android:layout_marginTop="@dimen/y42"
         android:text="View联动"
         android:onClick="goMoveView"
         android:layout_width="match_parent"
