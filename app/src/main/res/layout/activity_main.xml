@@ -26,4 +26,10 @@
         android:onClick="goCoordinatorLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
+    <Button
+        android:text="CoordinatorLayout 3"
+        android:onClick="goCoordinatorLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </LinearLayout>

@@ -25,4 +25,8 @@ public class MainActivity extends Activity {
     public void goCoordinatorLayout2(View view) {
         startActivity(new Intent(this, CoorLayoutActivity2.class));
     }
+    public void goCoordinatorLayout3(View view) {
+        startActivity(new Intent(this, CoorLayoutActivity3.class));
+    }
+
 }

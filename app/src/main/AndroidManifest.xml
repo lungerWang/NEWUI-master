@@ -28,7 +28,8 @@
             android:name=".CoorLayoutActivity2"
             android:theme="@style/AppTheme.NoActionBar"/>
 
-
+        <activity
+            android:name=".CoorLayoutActivity3"/>
     </application>
 
 </manifest>
