@@ -31,4 +31,10 @@
         android:onClick="goCoordinatorLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
+    <Button
+        android:text="indicator"
+        android:onClick="goIndicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </LinearLayout>

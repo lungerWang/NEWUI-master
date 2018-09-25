@@ -29,4 +29,7 @@ public class MainActivity extends Activity {
         startActivity(new Intent(this, CoorLayoutActivity3.class));
     }
 
+    public void goIndicator(View view) {
+        startActivity(new Intent(this, TitleIndicatorActivity.class));
+    }
 }
