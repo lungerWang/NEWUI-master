@@ -21,17 +21,26 @@ import cn.xuexuan.newui.R;
  * 首页标题选择控件
  */
 
-public class TitleIndicator extends RelativeLayout {
+public class TitleIndicator<T> extends RelativeLayout {
 
     private Context mContext;
+    //主容器
     private LinearLayout ll_container;
-    private List<String> mData;
+    //数据集合
+    private List<T> mData;
     private int size;
+    //选中回调
     private OnTitleSelectListener mOnTitleSelectListener;
+    //分类名解析
+    private Parser mParser;
     float textSize;
+    //未选中文字颜色
     int textNormalColor;
+    //选中文字颜色
     int textSelectedColor;
+    //未选中背景颜色
     int textNormalBgColor;
+    //选中背景颜色
     int textSelectedBgColor;
 
     public TitleIndicator(Context context) {
@@ -51,6 +60,7 @@ public class TitleIndicator extends RelativeLayout {
     private void init(AttributeSet attrs) {
         LayoutInflater.from(mContext).inflate(R.layout.title_indicator, this);
         ll_container = (LinearLayout) findViewById(R.id.ll_container);
+        //获取xml自定义属性
         if (attrs != null) {
             TypedArray ta = getContext().obtainStyledAttributes(attrs, R.styleable.TitleIndicator);
             textSize = ta.getDimension(R.styleable.TitleIndicator_textSize, 30);
@@ -61,12 +71,22 @@ public class TitleIndicator extends RelativeLayout {
         }
     }
 
+    /**
+     * 设置选中监听器
+     * @param onTitleSelectListener 监听器
+     */
     public void setOnTitleSelectListener(OnTitleSelectListener onTitleSelectListener) {
         mOnTitleSelectListener = onTitleSelectListener;
     }
 
-    public void setData(List<String> data) {
+    /**
+     * 设置数据源，解析器
+     * @param data 数据源
+     * @param parser 从数据源解析出分类名称的解析器
+     */
+    public void setData(List<T> data, Parser parser) {
         mData = data;
+        mParser = parser;
         if (mData != null) {
             size = mData.size();
         } else {
@@ -83,7 +103,11 @@ public class TitleIndicator extends RelativeLayout {
         TextView tv;
         for (int i = 0; i < size; i++) {
             tv = new TextView(mContext);
-            tv.setText(mData.get(i));
+            if(mData.get(i) != null){
+                tv.setText(mParser.getName(mData.get(i)));
+            }else{
+                tv.setText("");
+            }
             tv.setTextColor(textNormalColor);
             tv.setBackgroundColor(textNormalBgColor);
             tv.setTextSize(textSize);
@@ -104,10 +128,15 @@ public class TitleIndicator extends RelativeLayout {
         onTitleClick(0);
     }
 
+    /**
+     * 选中后的处理
+     * @param position
+     */
     private void onTitleClick(int position) {
         TextView childAt;
         for (int i = 0; i < size; i++) {
             childAt = (TextView) ll_container.getChildAt(i);
+            //设置字色，背景色
             if(i == position) {
                 childAt.setEnabled(false);
                 childAt.setTextColor(textSelectedColor);
@@ -118,15 +147,18 @@ public class TitleIndicator extends RelativeLayout {
                 childAt.setBackgroundColor(textNormalBgColor);
             }
         }
+        //回调position给调用者
         if(mOnTitleSelectListener != null){
             mOnTitleSelectListener.onSelect(position);
         }
-//        Toast.makeText(mContext, position + "", Toast.LENGTH_SHORT).show();
-//        Log.d("wbl", "position = " + position);
     }
 
     public interface OnTitleSelectListener{
         void onSelect(int position);
+    }
+
+    public interface Parser<T>{
+        String getName(T t);
     }
 
 }
