@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -17,6 +18,7 @@ import cn.xuexuan.newui.R;
 
 /**
  * Created by Allen on 2018/9/25 0025.
+ * 首页标题选择控件
  */
 
 public class TitleIndicator extends RelativeLayout {
@@ -25,6 +27,7 @@ public class TitleIndicator extends RelativeLayout {
     private LinearLayout ll_container;
     private List<String> mData;
     private int size;
+    private OnTitleSelectListener mOnTitleSelectListener;
     float textSize;
     int textNormalColor;
     int textSelectedColor;
@@ -56,6 +59,10 @@ public class TitleIndicator extends RelativeLayout {
             textNormalBgColor = ta.getColor(R.styleable.TitleIndicator_textNormalBgColor, Color.parseColor("#55000000"));
             textSelectedBgColor = ta.getColor(R.styleable.TitleIndicator_textSelectedBgColor, Color.parseColor("#ffffff"));
         }
+    }
+
+    public void setOnTitleSelectListener(OnTitleSelectListener onTitleSelectListener) {
+        mOnTitleSelectListener = onTitleSelectListener;
     }
 
     public void setData(List<String> data) {
@@ -100,27 +107,26 @@ public class TitleIndicator extends RelativeLayout {
     private void onTitleClick(int position) {
         TextView childAt;
         for (int i = 0; i < size; i++) {
-            childAt = (TextView) ll_container.getChildAt(position);
-//            if(i == position) {
-//                childAt.setEnabled(false);
-//                childAt.setTextColor(textSelectedColor);
-//                childAt.setBackgroundColor(textSelectedBgColor);
-//            }else{
-//                childAt.setEnabled(true);
-//                childAt.setTextColor(textNormalColor);
-//                childAt.setBackgroundColor(textNormalBgColor);
-//            }
+            childAt = (TextView) ll_container.getChildAt(i);
             if(i == position) {
                 childAt.setEnabled(false);
-                childAt.setTextColor(Color.parseColor("#ff0000"));
-                childAt.setBackgroundColor(Color.parseColor("#ffffff"));
+                childAt.setTextColor(textSelectedColor);
+                childAt.setBackgroundColor(textSelectedBgColor);
             }else{
                 childAt.setEnabled(true);
-                childAt.setTextColor(Color.parseColor("#000000"));
-                childAt.setBackgroundColor(Color.parseColor("#55000000"));
+                childAt.setTextColor(textNormalColor);
+                childAt.setBackgroundColor(textNormalBgColor);
             }
         }
-        Log.d("wbl", "position = " + position);
+        if(mOnTitleSelectListener != null){
+            mOnTitleSelectListener.onSelect(position);
+        }
+//        Toast.makeText(mContext, position + "", Toast.LENGTH_SHORT).show();
+//        Log.d("wbl", "position = " + position);
+    }
+
+    public interface OnTitleSelectListener{
+        void onSelect(int position);
     }
 
 }

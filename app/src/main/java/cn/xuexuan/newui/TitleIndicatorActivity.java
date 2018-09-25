@@ -26,14 +26,5 @@ public class TitleIndicatorActivity extends Activity {
             data.add("title" + i);
         }
         title_indicator.setData(data);
-
-        final TextView tv = (TextView) findViewById(R.id.tv);
-        tv.setTextColor(Color.parseColor("#ff0000"));
-        tv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                tv.setTextColor(Color.parseColor("#00ff00"));
-            }
-        });
     }
 }
