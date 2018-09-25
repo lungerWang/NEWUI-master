@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="TitleIndicator">
+        <attr name="textSize" format="dimension"/>
+        <attr name="textNormalColor" format="color"/>
+        <attr name="textSelectedColor" format="color"/>
+        <attr name="textNormalBgColor" format="color"/>
+        <attr name="textSelectedBgColor" format="color"/>
+    </declare-styleable>
+
+</resources>
